@@ -12,8 +12,6 @@ import {
   SignInBackground,
   MainLogo,
   TextLogo,
-  SignInButton,
-  SignInButtonText,
   SignInModal,
   SignInFormView,
   Title,
@@ -41,14 +39,12 @@ const SignIn: React.FC = () => {
         </SignInModal>
       </Modal>
       <SignInBackground source={image}>
-        <MainLogo>OHNE</MainLogo>
+        <MainLogo>NULL</MainLogo>
         <TextLogo>CO2</TextLogo>
         <Button>Criar conta</Button>
-        <SignInButton>
-          <SignInButtonText onPress={() => setModalVisible(true)}>
-            Já tenho conta
-          </SignInButtonText>
-        </SignInButton>
+        <Button transparent onPress={() => setModalVisible(true)}>
+          Já tenho conta
+        </Button>
       </SignInBackground>
     </Container>
   );

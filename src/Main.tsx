@@ -8,7 +8,7 @@ import AuthRoutes from './routes';
 const Main: React.FC = () => (
   <NavigationContainer>
     <StatusBar
-      barStyle="dark-content"
+      barStyle="light-content"
       translucent
       backgroundColor="#00000040"
     />
