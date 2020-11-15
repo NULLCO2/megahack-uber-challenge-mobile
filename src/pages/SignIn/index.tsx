@@ -1,29 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import {
-  SignInBackground,
-  MainLogo,
-  TextLogo,
-  SignUpButton,
-  SignInButton,
-  SignInButtonText,
-  SignUpButtonText,
-} from './styles';
+import { Modal } from 'react-native';
 
 import image from '../../../assets/background.jpeg';
 
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+
+import {
+  Container,
+  SignInBackground,
+  MainLogo,
+  TextLogo,
+  SignInButton,
+  SignInButtonText,
+  SignInModal,
+  SignInFormView,
+  Title,
+} from './styles';
+
 const SignIn: React.FC = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
-    <SignInBackground source={image}>
-      <MainLogo>OHNE</MainLogo>
-      <TextLogo>CO2</TextLogo>
-      <SignUpButton>
-        <SignUpButtonText>Criar conta</SignUpButtonText>
-      </SignUpButton>
-      <SignInButton>
-        <SignInButtonText>Já tenho conta</SignInButtonText>
-      </SignInButton>
-    </SignInBackground>
+    <Container>
+      <Modal
+        animationType="slide"
+        transparent
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <SignInModal>
+          <SignInFormView>
+            <Title>Faça seu login</Title>
+            <Input name="email" placeholder="E-mail" />
+            <Input name="password" placeholder="Senha" />
+
+            <Button>Entrar</Button>
+          </SignInFormView>
+        </SignInModal>
+      </Modal>
+      <SignInBackground source={image}>
+        <MainLogo>OHNE</MainLogo>
+        <TextLogo>CO2</TextLogo>
+        <Button>Criar conta</Button>
+        <SignInButton>
+          <SignInButtonText onPress={() => setModalVisible(true)}>
+            Já tenho conta
+          </SignInButtonText>
+        </SignInButton>
+      </SignInBackground>
+    </Container>
   );
 };
 
