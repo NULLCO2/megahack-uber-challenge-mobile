@@ -5,11 +5,12 @@ import { Container, ButtonText } from './styles';
 
 interface ButtonProps extends RectButtonProperties {
   children: string;
+  transparent?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
-  <Container {...rest}>
-    <ButtonText>{children}</ButtonText>
+const Button: React.FC<ButtonProps> = ({ children, transparent, ...rest }) => (
+  <Container transparent={transparent} {...rest}>
+    <ButtonText transparent={transparent}>{children}</ButtonText>
   </Container>
 );
 

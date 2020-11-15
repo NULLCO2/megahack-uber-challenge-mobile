@@ -13,8 +13,8 @@ export const SignInBackground = styled.ImageBackground`
 
 export const MainLogo = styled.Text`
   color: white;
-  font-size: 72px;
-  line-height: 72px;
+  font-size: 96px;
+  line-height: 96px;
   font-weight: bold;
   text-align: left;
 `;
@@ -28,30 +28,15 @@ export const TextLogo = styled.Text`
   text-align: left;
 `;
 
-export const SignUpButton = styled.TouchableOpacity`
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(103, 208, 194, 0.8);
-  margin: 8px;
-  padding: 8px;
-  border-radius: 16px;
-`;
-
-export const SignUpButtonText = styled.Text`
-  color: #fff;
-  font-weight: 300;
-  font-size: 18px;
-`;
-
 export const SignInButton = styled.TouchableOpacity`
-  justify-content: center;
+  width: 100%;
   height: 48px;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin: 8px 8px 40px 8px;
-  padding: 8px;
   border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 16px;
+
+  justify-content: center;
+  align-items: center;
 `;
 
 export const SignInButtonText = styled.Text`
