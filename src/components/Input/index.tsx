@@ -3,14 +3,21 @@ import { TextInputProps } from 'react-native';
 
 import { Container, TextInput } from './styles';
 
-interface InputProps extends TextInputProps {
-  name: string;
-  placeholder: string;
-}
-
-const Input: React.FC<InputProps> = ({ placeholder }) => (
+const Input: React.FC<TextInputProps> = ({
+  autoCorrect,
+  autoCapitalize,
+  keyboardType,
+  placeholder,
+  secureTextEntry,
+}) => (
   <Container>
-    <TextInput keyboardAppearance="dark" placeholder={placeholder} />
+    <TextInput
+      autoCorrect={autoCorrect}
+      autoCapitalize={autoCapitalize}
+      keyboardType={keyboardType}
+      placeholder={placeholder}
+      secureTextEntry={secureTextEntry}
+    />
   </Container>
 );
 

@@ -20,17 +20,7 @@ export const CO2Quantity = styled.Text`
   line-height: 90px;
 `;
 
-export const InlineView = styled.View`
-  flex-direction: row;
-  align-items: flex-end;
-`;
-
-export const SmallText = styled.Text`
-  font-size: 9px;
-`;
-
-export const Graph = styled.Image`
-  width: 355px;
-  height: 251px;
-  margin: 0 auto;
+export const Uber = styled.Image`
+  width: 85px;
+  height: 133px;
 `;

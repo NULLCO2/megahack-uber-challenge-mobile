@@ -1,21 +1,20 @@
-import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
 import { StatusBar, View } from 'react-native';
 
-import AuthRoutes from './routes';
+import AppRoutes from './routes';
 
 const Main: React.FC = () => (
-  <NavigationContainer>
+  <>
     <StatusBar
       barStyle="light-content"
       translucent
       backgroundColor="#00000040"
     />
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
-      <AuthRoutes />
+      <AppRoutes />
     </View>
-  </NavigationContainer>
+  </>
 );
 
 export default Main;
