@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 
 interface ButtonProps {
   transparent?: boolean;
 }
 
-export const Container = styled(RectButton)<ButtonProps>`
+export const Container = styled(TouchableOpacity)<ButtonProps>`
   width: 100%;
   height: 48px;
   border-radius: 16px;

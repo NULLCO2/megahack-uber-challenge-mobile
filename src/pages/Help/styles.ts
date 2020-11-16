@@ -6,13 +6,10 @@ export const Container = styled.View`
 
 export const Background = styled.ImageBackground`
   flex: 1;
-  padding: 0 16px;
-  align-items: center;
 `;
 
-export const CO2ResumeContainer = styled.View`
-  align-items: center;
-  padding: 32px;
+export const HelpContainer = styled.View`
+  padding: 24px;
 `;
 
 export const CO2Quantity = styled.Text`

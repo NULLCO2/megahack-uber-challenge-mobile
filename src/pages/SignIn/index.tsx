@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import { Modal } from 'react-native';
 
@@ -18,7 +19,22 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
+  const signUp = useCallback(() => {
+    navigation.navigate('SignUp');
+  }, [navigation]);
+
+  const dashboard = useCallback(() => {
+    setModalVisible(false);
+    navigation.navigate('Dashboard');
+  }, [navigation]);
+
   const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = useCallback(() => {
+    setModalVisible(true);
+  }, []);
 
   return (
     <Container>
@@ -31,18 +47,23 @@ const SignIn: React.FC = () => {
         <SignInModal>
           <SignInFormView>
             <Title>Faça seu login</Title>
-            <Input name="email" placeholder="E-mail" />
-            <Input name="password" placeholder="Senha" />
+            <Input
+              autoCorrect={false}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              placeholder="E-mail"
+            />
+            <Input secureTextEntry placeholder="Senha" />
 
-            <Button>Entrar</Button>
+            <Button onPress={dashboard}>Entrar</Button>
           </SignInFormView>
         </SignInModal>
       </Modal>
       <SignInBackground source={image}>
         <MainLogo>NULL</MainLogo>
         <TextLogo>CO2</TextLogo>
-        <Button>Criar conta</Button>
-        <Button transparent onPress={() => setModalVisible(true)}>
+        <Button onPress={signUp}>Criar conta</Button>
+        <Button transparent onPress={openModal}>
           Já tenho conta
         </Button>
       </SignInBackground>

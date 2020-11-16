@@ -28,23 +28,6 @@ export const TextLogo = styled.Text`
   text-align: left;
 `;
 
-export const SignInButton = styled.TouchableOpacity`
-  width: 100%;
-  height: 48px;
-  border-radius: 16px;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-bottom: 16px;
-
-  justify-content: center;
-  align-items: center;
-`;
-
-export const SignInButtonText = styled.Text`
-  color: #fff;
-  font-weight: 300;
-  font-size: 16px;
-`;
-
 export const SignInModal = styled.View`
   flex: 1;
   justify-content: flex-end;
